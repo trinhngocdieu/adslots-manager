@@ -25,7 +25,7 @@ export function* adslotsAdd(action) {
       adslot: response.data.adslot,
     });
 
-    action.callbackSuccess();
+    action.callbackSuccess(response.data.adslot);
   } catch(error) {
     action.callbackError(error);
   }
@@ -42,7 +42,7 @@ export function* adslotsEdit(action) {
       adslot: action.adslot,
     });
 
-    action.callbackSuccess();
+    action.callbackSuccess(action.adslot);
   } catch (error) {
     action.callbackError();
   }

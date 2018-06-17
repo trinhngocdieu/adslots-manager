@@ -33,10 +33,11 @@ export class AdSlotEditor extends React.Component {
         callbackError: (message) => {
           reject(new SubmissionError({_error: message}));
         },
-        callbackSuccess: () => {
+        callbackSuccess: (slot) => {
           dispatch({
             type: 'ADSLOT_SUCCESS',
-            data: adslot.id ? 'Edit adslot successfully' : 'Add adslot successfully'
+            data: adslot.id ? `Edit adslot #${slot.id} successfully`:
+              `Add adslot "${slot.name}" successfully`
           });
           dispatch(push('/'));
           resolve();
@@ -59,7 +60,6 @@ export class AdSlotEditor extends React.Component {
             doValidate={true}
           />
 
-          {/* I asume that we only have 4 types */}
           <Field component={FormField}
             name="type"
             label="Type"
