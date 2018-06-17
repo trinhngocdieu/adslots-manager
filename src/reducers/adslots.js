@@ -38,14 +38,6 @@ export default function adslots(state = initialState, action) {
       newState.formatFilter = action.data;
       return newState;
 
-    case 'ADSLOT_FORMAT_FILTER':
-      newState.formatFilter = action.data;
-      return newState;
-
-    case 'ADSLOT_FORMAT_FILTER':
-      newState.formatFilter = action.data;
-      return newState;
-
     case 'ADSLOT_SUCCESS':
       newState.message = action.data;
       return newState;
